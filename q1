@@ -1,0 +1,27 @@
+from numbers import Number
+
+def swap(x, y):
+    """
+    Task 1
+    - Create a function that would swap the value of x and y using only x and y as variables.
+    - x and y must be numeric.
+    - Return -1 if x and y is not numeric, and
+    - print the swapped values if both x and y are numeric.
+    """
+    # validate numeric (exclude bool even though bool is a subclass of int)
+    if not (isinstance(x, Number) and isinstance(y, Number)) or isinstance(x, bool) or isinstance(y, bool):
+        return -1
+
+    # swap using only x and y (no extra variables)
+    x, y = y, x
+
+    # print swapped values
+    print(x, y)
+
+
+# Task 2
+# Invoke the function "swap" using the following scenarios:
+result1 = swap("Apple", 10)
+print(result1)  # should print -1
+
+swap(-9, 17)    # should print: 17 -9
